@@ -24,7 +24,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $stmt = $conn->prepare("UPDATE users SET last_login = NOW() WHERE user_id = ?");
         $stmt->execute([$user['user_id']]);
 
-        // log_activity($user['user_id'], 'login');
+        log_activity($user['user_id'], 'login');
 
         // Redirect berdasarkan role
         switch ($user['role']) {
