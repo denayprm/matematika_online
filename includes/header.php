@@ -1,5 +1,9 @@
 <?php
-session_start();
+
+if (session_status() !== PHP_SESSION_ACTIVE) {
+    session_start();
+}
+
 ?>
 <!DOCTYPE html>
 <html lang="id">
@@ -34,7 +38,7 @@ session_start();
                     <li class="nav-item">
                         <a class="nav-link" href="/matematika_online">Beranda</a>
                     </li>
-                    <?php if (isset($_SESSION['user_id'])): ?>
+                    <!--<?php if (isset($_SESSION['user_id'])): ?>
                         <li class="nav-item">
                             <a class="nav-link" href="/matematika_online/materi">Materi</a>
                         </li>
@@ -44,22 +48,22 @@ session_start();
                         <li class="nav-item">
                             <a class="nav-link" href="/matematika_online/forum">Forum</a>
                         </li>
-                    <?php endif; ?>
+                    <?php endif; ?>-->
                 </ul>
                 <ul class="navbar-nav">
                     <?php if (isset($_SESSION['user_id'])): ?>
                         <li class="nav-item">
-                            <a class="nav-link" href="/matematika_online/profile">Profile</a>
+                            <a class="nav-link" href="siswa/profile.php">Profile</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="/matematika_online/auth/logout.php">Logout</a>
+                            <a class="nav-link" href="auth/logout.php">Logout</a>
                         </li>
                     <?php else: ?>
                         <li class="nav-item">
-                            <a class="nav-link" href="/matematika_online/auth/login.php">Login</a>
+                            <a class="nav-link" href="auth/login.php">Login</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="/matematika_online/auth/register.php">Register</a>
+                            <a class="nav-link" href="auth/register.php">Register</a>
                         </li>
                     <?php endif; ?>
                 </ul>
