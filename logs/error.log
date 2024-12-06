@@ -84,3 +84,5 @@
 
 [06-Dec-2024 18:38:43 Europe/Berlin] [2024-12-06 18:38:43] Exception: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'action' in 'field list' in C:\xampp\htdocs\matematika_online\config\init.php on line 55
 
+[06-Dec-2024 20:18:08 Europe/Berlin] [2024-12-06 20:18:08] Error (8): session_start(): Ignoring session_start() because a session is already active in C:\xampp\htdocs\matematika_online\includes\auth_middleware.php on line 2
+
