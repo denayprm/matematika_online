@@ -48,9 +48,9 @@ $total_pages = ceil($total_users / $limit);
 
 // Get users
 $stmt = $conn->prepare("
-    SELECT * FROM users 
-    WHERE $where_clause 
-    ORDER BY created_at DESC 
+    SELECT * FROM users
+    WHERE $where_clause
+    ORDER BY created_at DESC
     LIMIT ? OFFSET ?
 ");
 $params[] = $limit;
