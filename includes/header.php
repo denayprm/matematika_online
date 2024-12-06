@@ -52,7 +52,7 @@ session_start();
                             <a class="nav-link" href="/matematika_online/profile">Profile</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="/matematika_online/logout.php">Logout</a>
+                            <a class="nav-link" href="/matematika_online/system/logout.php">Logout</a>
                         </li>
                     <?php else: ?>
                         <li class="nav-item">
