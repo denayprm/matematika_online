@@ -1,4 +1,9 @@
 <?php
+
+if (session_status() !== PHP_SESSION_ACTIVE) {
+    session_start();
+}
+
 include 'config/database.php';
 require_once 'includes/header.php';
 ?>
