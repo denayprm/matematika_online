@@ -40,7 +40,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $stmt->execute([$username, $email, $hashed_password, $full_name, $role]);
 
             set_flash_message('success', 'Registrasi berhasil! Silakan login.');
-            redirect('../auth/login.php');
+            redirect('auth/login.php');
         } catch (PDOException $e) {
             $errors[] = "Terjadi kesalahan dalam proses registrasi";
         }
