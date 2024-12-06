@@ -74,3 +74,7 @@
 
 [05-Dec-2024 20:06:08 Europe/Berlin] [2024-12-05 20:06:08] Exception: Call to undefined function log_activity() in C:\xampp\htdocs\matematika_online\auth\login.php on line 27
 
+[06-Dec-2024 18:24:08 Europe/Berlin] [2024-12-06 18:24:08] Exception: Call to undefined function log_activity() in C:\xampp\htdocs\matematika_online\auth\logout.php on line 6
+
+[06-Dec-2024 18:24:51 Europe/Berlin] [2024-12-06 18:24:51] Exception: Call to undefined function log_activity() in C:\xampp\htdocs\matematika_online\auth\logout.php on line 6
+
