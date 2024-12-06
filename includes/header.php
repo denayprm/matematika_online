@@ -36,19 +36,8 @@ if (session_status() !== PHP_SESSION_ACTIVE) {
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav me-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="/matematika_online">Beranda</a>
+                        <a class="nav-link" href="siswa/dashboard.php">Beranda</a>
                     </li>
-                    <!--<?php if (isset($_SESSION['user_id'])): ?>
-                        <li class="nav-item">
-                            <a class="nav-link" href="/matematika_online/materi">Materi</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="/matematika_online/kuis">Kuis</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="/matematika_online/forum">Forum</a>
-                        </li>
-                    <?php endif; ?>-->
                 </ul>
                 <ul class="navbar-nav">
                     <?php if (isset($_SESSION['user_id'])): ?>
@@ -56,7 +45,7 @@ if (session_status() !== PHP_SESSION_ACTIVE) {
                             <a class="nav-link" href="siswa/profile.php">Profile</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="auth/logout.php">Logout</a>
+                            <a class="nav-link" href="/matematika_online/auth/logout.php">Logout</a>
                         </li>
                     <?php else: ?>
                         <li class="nav-item">
