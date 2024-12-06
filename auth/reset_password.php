@@ -3,7 +3,7 @@ require_once '../config/init.php';
 require_once '../config/database.php';
 
 if (!isset($_GET['token'])) {
-    redirect('/auth/login.php');
+    redirect('auth/login.php');
 }
 
 $token = $_GET['token'];
@@ -20,7 +20,7 @@ $reset = $stmt->fetch(PDO::FETCH_ASSOC);
 
 if (!$reset) {
     set_flash_message('error', 'Token tidak valid atau sudah kadaluarsa');
-    redirect('/auth/login.php');
+    redirect('auth/login.php');
 }
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -44,7 +44,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $conn->commit();
 
             set_flash_message('success', 'Password berhasil diubah');
-            redirect('/auth/login.php');
+            redirect('auth/login.php');
         } catch (PDOException $e) {
             $conn->rollBack();
             set_flash_message('error', 'Terjadi kesalahan dalam mengubah password');
