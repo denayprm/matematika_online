@@ -15,8 +15,6 @@ include '../includes/header.php';
         <div class="card">
             <div class="card-body">
                 <h5>Selamat datang, <?php echo $_SESSION['username']; ?></h5>
-                <p>Anda login sebagai Siswa.</p>
-
                 <!-- Tambahkan menu dan fitur siswa di sini -->
             </div>
         </div>
