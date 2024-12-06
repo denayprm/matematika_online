@@ -13,7 +13,7 @@ ini_set('log_errors', 1);
 ini_set('error_log', __DIR__ . '/../logs/error.log');
 
 // Start session if not already started
-if (session_status() === PHP_SESSION_NONE) {
+if (session_status() !== PHP_SESSION_ACTIVE) {
     session_start();
 }
 
@@ -44,6 +44,15 @@ function set_flash_message($type, $message)
         'type' => $type,
         'message' => $message
     ];
+}
+
+// Fungsi untuk mencatat aktivitas pengguna
+function log_activity($user_id, $action)
+{
+    global $conn; // Gunakan koneksi global
+
+    $stmt = $conn->prepare("INSERT INTO activity_logs (user_id, action) VALUES (?, ?)");
+    $stmt->execute([$user_id, $action]);
 }
 
 function get_flash_message()
