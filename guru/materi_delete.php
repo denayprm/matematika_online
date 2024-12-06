@@ -37,18 +37,18 @@ include '../includes/header.php';
             <div class="card-header">Hapus Materi</div>
             <div class="card-body">
                 <?php if ($error): ?>
-                <div class="alert alert-danger"><?php echo $error; ?></div>
+                    <div class="alert alert-danger"><?php echo $error; ?></div>
                 <?php endif; ?>
                 <?php if ($success): ?>
-                <div class="alert alert-success"><?php echo $success; ?></div>
+                    <div class="alert alert-success"><?php echo $success; ?></div>
                 <?php endif; ?>
 
                 <?php if (isset($materi)): ?>
-                <p>Apakah Anda yakin ingin menghapus materi <strong><?php echo $materi['judul']; ?></strong>?</p>
-                <form method="POST" action="">
-                    <button type="submit" class="btn btn-danger">Ya, Hapus</button>
-                    <a href="materi_list.php" class="btn btn-link">Batal</a>
-                </form>
+                    <p>Apakah Anda yakin ingin menghapus materi <strong><?php echo $materi['judul']; ?></strong>?</p>
+                    <form method="POST" action="">
+                        <button type="submit" class="btn btn-danger">Ya, Hapus</button>
+                        <a href="materi_list.php" class="btn btn-link">Batal</a>
+                    </form>
                 <?php endif; ?>
             </div>
         </div>

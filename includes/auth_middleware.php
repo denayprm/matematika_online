@@ -1,7 +1,8 @@
 <?php
 session_start();
 
-function checkAuth($allowed_roles = []) {
+function checkAuth($allowed_roles = [])
+{
     if (!isset($_SESSION['user_id'])) {
         header("Location: ../login.php");
         exit();
@@ -15,16 +16,19 @@ function checkAuth($allowed_roles = []) {
 }
 
 // Admin dashboard
-function checkAdminAuth() {
+function checkAdminAuth()
+{
     checkAuth(['admin']);
 }
 
 // Guru dashboard
-function checkGuruAuth() {
+function checkGuruAuth()
+{
     checkAuth(['guru']);
 }
 
 // Siswa dashboard
-function checkSiswaAuth() {
+function checkSiswaAuth()
+{
     checkAuth(['siswa']);
 }
