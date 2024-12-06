@@ -1,0 +1,63 @@
+/* Custom styles */
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.container {
+    flex: 1;
+}
+
+/* Style untuk card materi */
+.materi-card {
+    transition: transform 0.3s;
+}
+
+.materi-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Style untuk form */
+.form-container {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f8f9fa;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Style untuk tampilan rumus matematika */
+.math-content {
+    overflow-x: auto;
+    padding: 15px;
+    background-color: #f8f9fa;
+    border-radius: 5px;
+    margin: 10px 0;
+}
+
+/* Style untuk forum diskusi */
+.discussion-thread {
+    border-left: 3px solid #007bff;
+    padding-left: 15px;
+    margin-bottom: 20px;
+}
+
+/* Style untuk progress bar */
+.progress {
+    height: 10px;
+    margin-bottom: 10px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .form-container {
+        padding: 15px;
+    }
+
+    .container {
+        padding: 10px;
+    }
+}

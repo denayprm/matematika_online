@@ -1,0 +1,76 @@
+[05-Dec-2024 18:17:34 Europe/Berlin] [2024-12-05 18:17:34] Error (2): Undefined variable $conn in C:\xampp\htdocs\matematika_online\auth\register.php on line 16
+
+[05-Dec-2024 18:17:34 Europe/Berlin] [2024-12-05 18:17:34] Exception: Call to a member function prepare() on null in C:\xampp\htdocs\matematika_online\auth\register.php on line 16
+
+[05-Dec-2024 18:18:20 Europe/Berlin] [2024-12-05 18:18:20] Error (2): Undefined variable $conn in C:\xampp\htdocs\matematika_online\auth\login.php on line 8
+
+[05-Dec-2024 18:18:20 Europe/Berlin] [2024-12-05 18:18:20] Exception: Call to a member function prepare() on null in C:\xampp\htdocs\matematika_online\auth\login.php on line 8
+
+[05-Dec-2024 18:19:36 Europe/Berlin] [2024-12-05 18:19:36] Error (2): Undefined variable $conn in C:\xampp\htdocs\matematika_online\auth\login.php on line 8
+
+[05-Dec-2024 18:19:36 Europe/Berlin] [2024-12-05 18:19:36] Exception: Call to a member function prepare() on null in C:\xampp\htdocs\matematika_online\auth\login.php on line 8
+
+[05-Dec-2024 18:33:45 Europe/Berlin] [2024-12-05 18:33:45] Error (2): Undefined variable $conn in C:\xampp\htdocs\matematika_online\auth\register.php on line 16
+
+[05-Dec-2024 18:33:45 Europe/Berlin] [2024-12-05 18:33:45] Exception: Call to a member function prepare() on null in C:\xampp\htdocs\matematika_online\auth\register.php on line 16
+
+[05-Dec-2024 18:37:42 Europe/Berlin] [2024-12-05 18:37:42] Error (2): Undefined variable $conn in C:\xampp\htdocs\matematika_online\auth\register.php on line 16
+
+[05-Dec-2024 18:37:42 Europe/Berlin] [2024-12-05 18:37:42] Exception: Call to a member function prepare() on null in C:\xampp\htdocs\matematika_online\auth\register.php on line 16
+
+[05-Dec-2024 18:43:17 Europe/Berlin] [2024-12-05 18:43:17] Error (2): Undefined variable $conn in C:\xampp\htdocs\matematika_online\auth\register.php on line 16
+
+[05-Dec-2024 18:43:17 Europe/Berlin] [2024-12-05 18:43:17] Exception: Call to a member function prepare() on null in C:\xampp\htdocs\matematika_online\auth\register.php on line 16
+
+[05-Dec-2024 18:50:45 Europe/Berlin] [2024-12-05 18:50:45] Error (8): session_start(): Ignoring session_start() because a session is already active in C:\xampp\htdocs\matematika_online\includes\auth_check.php on line 2
+
+[05-Dec-2024 18:50:45 Europe/Berlin] [2024-12-05 18:50:45] Error (2): Undefined variable $conn in C:\xampp\htdocs\matematika_online\forum\index.php on line 30
+
+[05-Dec-2024 18:50:45 Europe/Berlin] [2024-12-05 18:50:45] Exception: Call to a member function prepare() on null in C:\xampp\htdocs\matematika_online\forum\index.php on line 30
+
+[05-Dec-2024 18:57:36 Europe/Berlin] [2024-12-05 18:57:36] Error (2): Undefined variable $conn in C:\xampp\htdocs\matematika_online\auth\login.php on line 8
+
+[05-Dec-2024 18:57:36 Europe/Berlin] [2024-12-05 18:57:36] Exception: Call to a member function prepare() on null in C:\xampp\htdocs\matematika_online\auth\login.php on line 8
+
+[05-Dec-2024 18:58:22 Europe/Berlin] [2024-12-05 18:58:22] Error (2): Undefined variable $conn in C:\xampp\htdocs\matematika_online\auth\login.php on line 8
+
+[05-Dec-2024 18:58:22 Europe/Berlin] [2024-12-05 18:58:22] Exception: Call to a member function prepare() on null in C:\xampp\htdocs\matematika_online\auth\login.php on line 8
+
+[05-Dec-2024 19:30:56 Europe/Berlin] [2024-12-05 19:30:56] Error (2): Undefined variable $conn in C:\xampp\htdocs\matematika_online\auth\login.php on line 8
+
+[05-Dec-2024 19:30:56 Europe/Berlin] [2024-12-05 19:30:56] Exception: Call to a member function prepare() on null in C:\xampp\htdocs\matematika_online\auth\login.php on line 8
+
+[05-Dec-2024 19:34:42 Europe/Berlin] [2024-12-05 19:34:42] Error (2): Undefined variable $conn in C:\xampp\htdocs\matematika_online\auth\forgot_password.php on line 7
+
+[05-Dec-2024 19:34:42 Europe/Berlin] [2024-12-05 19:34:42] Exception: Call to a member function prepare() on null in C:\xampp\htdocs\matematika_online\auth\forgot_password.php on line 7
+
+[05-Dec-2024 19:35:16 Europe/Berlin] [2024-12-05 19:35:16] Error (2): Undefined variable $conn in C:\xampp\htdocs\matematika_online\auth\forgot_password.php on line 8
+
+[05-Dec-2024 19:35:16 Europe/Berlin] [2024-12-05 19:35:16] Exception: Call to a member function prepare() on null in C:\xampp\htdocs\matematika_online\auth\forgot_password.php on line 8
+
+[05-Dec-2024 19:40:55 Europe/Berlin] [2024-12-05 19:40:55] Exception: Unknown column 'is_active' in 'where clause' in C:\xampp\htdocs\matematika_online\auth\login.php on line 14
+
+[05-Dec-2024 19:42:18 Europe/Berlin] [2024-12-05 19:42:18] Error (2): Undefined variable $stmt in C:\xampp\htdocs\matematika_online\auth\login.php on line 15
+
+[05-Dec-2024 19:42:18 Europe/Berlin] [2024-12-05 19:42:18] Exception: Call to a member function execute() on null in C:\xampp\htdocs\matematika_online\auth\login.php on line 15
+
+[05-Dec-2024 19:46:48 Europe/Berlin] [2024-12-05 19:46:48] Exception: Unknown column 'is_active' in 'where clause' in C:\xampp\htdocs\matematika_online\auth\login.php on line 14
+
+[05-Dec-2024 19:48:37 Europe/Berlin] [2024-12-05 19:48:37] Exception: Unknown column 'is_active' in 'where clause' in C:\xampp\htdocs\matematika_online\auth\login.php on line 14
+
+[05-Dec-2024 19:49:39 Europe/Berlin] [2024-12-05 19:49:39] Exception: Unknown column 'is_active' in 'where clause' in C:\xampp\htdocs\matematika_online\auth\login.php on line 14
+
+[05-Dec-2024 19:49:51 Europe/Berlin] [2024-12-05 19:49:51] Exception: Unknown column 'is_active' in 'where clause' in C:\xampp\htdocs\matematika_online\auth\login.php on line 14
+
+[05-Dec-2024 19:50:10 Europe/Berlin] [2024-12-05 19:50:10] Error (2): Undefined variable $conn in C:\xampp\htdocs\matematika_online\auth\register.php on line 17
+
+[05-Dec-2024 19:50:10 Europe/Berlin] [2024-12-05 19:50:10] Exception: Call to a member function prepare() on null in C:\xampp\htdocs\matematika_online\auth\register.php on line 17
+
+[05-Dec-2024 19:53:23 Europe/Berlin] [2024-12-05 19:53:23] Exception: Unknown column 'is_active' in 'where clause' in C:\xampp\htdocs\matematika_online\auth\login.php on line 14
+
+[05-Dec-2024 19:59:13 Europe/Berlin] [2024-12-05 19:59:13] Exception: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'is_active' in 'where clause' in C:\xampp\htdocs\matematika_online\auth\login.php on line 15
+
+[05-Dec-2024 20:02:57 Europe/Berlin] [2024-12-05 20:02:57] Exception: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'last_login' in 'field list' in C:\xampp\htdocs\matematika_online\auth\login.php on line 25
+
+[05-Dec-2024 20:06:08 Europe/Berlin] [2024-12-05 20:06:08] Exception: Call to undefined function log_activity() in C:\xampp\htdocs\matematika_online\auth\login.php on line 27
+
