@@ -1,6 +1,6 @@
 <?php
 define('ROOT_PATH', dirname(__DIR__));
-define('BASE_URL', 'http://localhost/matematika_online/');
+define('BASE_URL', 'http://localhost/matematika_online/index.php');
 
 // Role definitions
 define('ROLE_ADMIN', 'admin');
