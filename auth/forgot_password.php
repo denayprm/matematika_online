@@ -19,7 +19,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         // TODO: Implement email sending
         // For now, just show the reset link
-        $reset_link = BASE_URL . "/auth/reset_password.php?token=" . $token;
+        $reset_link = BASE_URL . "auth/reset_password.php?token=" . $token;
         set_flash_message('success', "Link reset password: " . $reset_link);
     } else {
         set_flash_message('error', 'Email tidak ditemukan');
