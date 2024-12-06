@@ -78,3 +78,9 @@
 
 [06-Dec-2024 18:24:51 Europe/Berlin] [2024-12-06 18:24:51] Exception: Call to undefined function log_activity() in C:\xampp\htdocs\matematika_online\auth\logout.php on line 6
 
+[06-Dec-2024 18:30:51 Europe/Berlin] [2024-12-06 18:30:51] Exception: Call to undefined function log_activity() in C:\xampp\htdocs\matematika_online\auth\logout.php on line 6
+
+[06-Dec-2024 18:37:53 Europe/Berlin] [2024-12-06 18:37:53] Exception: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'action' in 'field list' in C:\xampp\htdocs\matematika_online\config\init.php on line 55
+
+[06-Dec-2024 18:38:43 Europe/Berlin] [2024-12-06 18:38:43] Exception: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'action' in 'field list' in C:\xampp\htdocs\matematika_online\config\init.php on line 55
+
