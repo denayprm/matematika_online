@@ -11,7 +11,8 @@
             "driver": "MySQL",
             "name": "matematika_online",
             "database": "matematika_online",
-            "username": "denayprm"
+            "username": "denayprm",
+            "password": "de4n18i2"
         }
     ]
 }
