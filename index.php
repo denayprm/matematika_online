@@ -20,7 +20,7 @@ require_once 'includes/header.php';
 </div>
 
 <div class="row mt-4">
-    <div class="col-md-4">
+    <div class="col-md-6">
         <div class="card">
             <div class="card-body">
                 <h5 class="card-title">Materi Terstruktur</h5>
@@ -28,19 +28,11 @@ require_once 'includes/header.php';
             </div>
         </div>
     </div>
-    <div class="col-md-4">
+    <div class="col-md-6">
         <div class="card">
             <div class="card-body">
                 <h5 class="card-title">Latihan Interaktif</h5>
                 <p class="card-text">Uji pemahaman Anda dengan kuis dan latihan soal interaktif.</p>
-            </div>
-        </div>
-    </div>
-    <div class="col-md-4">
-        <div class="card">
-            <div class="card-body">
-                <h5 class="card-title">Forum Diskusi</h5>
-                <p class="card-text">Diskusikan materi dengan guru dan sesama siswa.</p>
             </div>
         </div>
     </div>
