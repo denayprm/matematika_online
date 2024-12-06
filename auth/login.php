@@ -31,9 +31,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             case 'admin':
                 redirect('admin/dashboard.php');
                 break;
-            case 'guru':
-                redirect('guru/dashboard.php');
-                break;
             case 'siswa':
                 redirect('siswa/dashboard.php');
                 break;
