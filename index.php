@@ -16,6 +16,7 @@ require_once 'includes/header.php';
         <p>Mulai belajar sekarang dengan mendaftar atau masuk ke akun Anda.</p>
         <a class="btn btn-primary btn-lg" href="auth/register.php" role="button">Daftar</a>
         <a class="btn btn-secondary btn-lg" href="auth/login.php" role="button">Masuk</a>
+        <p>Akses akun anda untuk melihat lebih detail tentang fitur</p>
     <?php endif; ?>
 </div>
 
