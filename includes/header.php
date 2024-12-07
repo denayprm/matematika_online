@@ -4,8 +4,9 @@ if (session_status() !== PHP_SESSION_ACTIVE) {
     session_start();
 }
 
-define('BASE_URL', 'http://localhost/matematika_online/');
-
+if (!defined('BASE_URL')) {
+    define('BASE_URL', 'http://localhost/matematika_online/');
+}
 ?>
 <!DOCTYPE html>
 <html lang="id">
@@ -14,7 +15,7 @@ define('BASE_URL', 'http://localhost/matematika_online/');
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sistem Pembelajaran Matematika Online</title>
-    <link rel="icon" type="image/x-icon" href="assets/img/denay.png">
+    <link rel="icon" type="image/x-icon" href="matematika_online/assets/img/denay.png">
 
     <!-- CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -46,9 +47,15 @@ define('BASE_URL', 'http://localhost/matematika_online/');
                 </ul>
                 <ul class="navbar-nav">
                     <?php if (isset($_SESSION['user_id'])): ?>
-                        <li class="nav-item">
-                            <a class="nav-link" href="<?= BASE_URL ?>siswa/profile.php">Profile</a>
-                        </li>
+                        <?php if ($_SESSION['role'] === 'admin'): ?>
+                            <li class="nav-item">
+                                <a class="nav-link" href="<?= BASE_URL ?>admin/dashboard.php">Dashboard Admin</a>
+                            </li>
+                        <?php elseif ($_SESSION['role'] === 'siswa'): ?>
+                            <li class="nav-item">
+                                <a class="nav-link" href="<?= BASE_URL ?>siswa/profile.php">Profile Siswa</a>
+                            </li>
+                        <?php endif; ?>
                         <li class="nav-item">
                             <a class="nav-link" href="<?= BASE_URL ?>auth/logout.php">Logout</a>
                         </li>

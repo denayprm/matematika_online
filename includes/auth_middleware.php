@@ -1,5 +1,7 @@
 <?php
-session_start();
+if (session_status() !== PHP_SESSION_ACTIVE) {
+    session_start();
+}
 
 function checkAuth($allowed_roles = [])
 {
@@ -19,12 +21,6 @@ function checkAuth($allowed_roles = [])
 function checkAdminAuth()
 {
     checkAuth(['admin']);
-}
-
-// Guru dashboard
-function checkGuruAuth()
-{
-    checkAuth(['guru']);
 }
 
 // Siswa dashboard
