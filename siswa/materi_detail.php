@@ -31,8 +31,15 @@ include '../includes/header.php';
     <div class="col-md-12">
         <h1><?= htmlspecialchars($materi['judul']) ?></h1>
         <!-- Menampilkan konten lengkap termasuk gambar -->
-        <?= $materi['konten'] ?>
-        <p><strong>Deskripsi:</strong> <?= htmlspecialchars($materi['deskripsi']) ?></p>
+        <?php
+        // Menampilkan gambar jika ada dalam konten
+        if (preg_match('/<img.*?src=["\'](.*?)["\']/', $materi['konten'], $matches)) {
+            // Pastikan path gambar diupdate
+            $imagePath = '../' . htmlspecialchars($matches[1]);
+            echo '<img src="' . $imagePath . '" class="card-img-top" alt="' . htmlspecialchars($materi['judul']) . '" style="custom-img">';
+        }
+        ?>
+        <p><strong>Keterangan:</strong> <?= htmlspecialchars($materi['keterangan']) ?></p>
         <p><strong>Jumlah Dibaca:</strong> <?= htmlspecialchars($materi['jumlah_dibaca']) ?></p>
         <p><strong>Ditambahkan pada:</strong> <?= htmlspecialchars(date('d-m-Y', strtotime($materi['created_at']))) ?></p>
     </div>
