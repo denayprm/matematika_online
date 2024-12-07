@@ -99,6 +99,9 @@ function time_elapsed_string($datetime, $full = false)
 {
     // Pastikan $datetime valid
     try {
+        // Pastikan zona waktu default sesuai kebutuhan
+        date_default_timezone_set('Asia/Jakarta'); // Ubah sesuai zona waktu Anda
+
         $now = new DateTime();
         $ago = new DateTime($datetime);
     } catch (Exception $e) {

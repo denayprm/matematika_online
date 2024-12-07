@@ -7,6 +7,10 @@ $db = new Database();
 $conn = $db->getConnection();
 
 include '../includes/header.php';
+
+// Mengambil daftar bacaan dari tabel materi
+$stmt = $conn->query("SELECT * FROM materi WHERE is_active = 1");
+$materi_list = $stmt->fetchAll(PDO::FETCH_ASSOC);
 ?>
 
 <div class="row">
@@ -14,8 +18,27 @@ include '../includes/header.php';
         <h1>Dashboard Siswa</h1>
         <div class="card">
             <div class="card-body">
-                <h5>Selamat datang, <?php echo $_SESSION['username']; ?></h5>
-                <!-- Tambahkan menu dan fitur siswa di sini -->
+                <h5>Selamat datang, <?php echo htmlspecialchars($_SESSION['username']); ?></h5>
+                <h6>Daftar Bacaan</h6>
+                <div class="row">
+                    <?php foreach ($materi_list as $materi): ?>
+                        <div class="col-md-4 mb-4">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="card-title"><?= htmlspecialchars($materi['judul']) ?></h5>
+                                    <?php
+                                    // Menampilkan gambar jika ada dalam konten
+                                    if (preg_match('/<img.*?src=["\'](.*?)["\']/', $materi['konten'], $matches)) {
+                                        echo '<img src="' . htmlspecialchars($matches[1]) . '" class="card-img-top" alt="' . htmlspecialchars($materi['judul']) . '" style="max-width:100%; height:auto;">';
+                                    }
+                                    ?>
+                                    <p class="card-text"><?= htmlspecialchars($materi['deskripsi']) ?></p>
+                                    <a href="materi_detail.php?id=<?= $materi['materi_id'] ?>" class="btn btn-primary">Baca Selengkapnya</a>
+                                </div>
+                            </div>
+                        </div>
+                    <?php endforeach; ?>
+                </div>
             </div>
         </div>
     </div>

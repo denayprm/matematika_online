@@ -8,6 +8,15 @@ if (!defined('BASE_URL')) {
     define('BASE_URL', 'http://localhost/matematika_online/');
 }
 ?>
+
+<script>
+    function confirmLogout() {
+        if (confirm("Apakah Anda yakin ingin keluar?")) {
+            window.location.href = "auth/logout.php";
+        }
+    }
+</script>
+
 <!DOCTYPE html>
 <html lang="id">
 
@@ -19,6 +28,7 @@ if (!defined('BASE_URL')) {
 
     <!-- CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link href="/matematika_online/assets/css/style.css" rel="stylesheet">
 
     <!-- JavaScript -->
@@ -40,9 +50,15 @@ if (!defined('BASE_URL')) {
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav me-auto">
                     <?php if (isset($_SESSION['user_id'])): ?>
-                        <li class="nav-item">
-                            <a class="nav-link" href="<?= BASE_URL ?>siswa/dashboard.php">Beranda</a>
-                        </li>
+                        <?php if ($_SESSION['role'] === 'admin'): ?>
+                            <li class="nav-item">
+                                <a class="nav-link" href="<?= BASE_URL ?>admin/dashboard.php">Dashboard Admin</a>
+                            </li>
+                        <?php elseif ($_SESSION['role'] === 'siswa'): ?>
+                            <li class="nav-item">
+                                <a class="nav-link" href="<?= BASE_URL ?>siswa/dashboard.php">Dashboard Siswa</a>
+                            </li>
+                        <?php endif; ?>
                     <?php endif; ?>
                 </ul>
                 <ul class="navbar-nav">
@@ -57,7 +73,7 @@ if (!defined('BASE_URL')) {
                             </li>
                         <?php endif; ?>
                         <li class="nav-item">
-                            <a class="nav-link" href="<?= BASE_URL ?>auth/logout.php">Logout</a>
+                            <a class="nav-link" href="<?= BASE_URL ?>auth/logout.php" onclick="confirmLogout()">Logout</a>
                         </li>
                     <?php else: ?>
                         <li class="nav-item">
