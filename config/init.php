@@ -97,13 +97,21 @@ set_exception_handler('custom_exception_handler');
 
 function time_elapsed_string($datetime, $full = false)
 {
-    $now = new DateTime();
-    $ago = new DateTime($datetime);
+    // Pastikan $datetime valid
+    try {
+        $now = new DateTime();
+        $ago = new DateTime($datetime);
+    } catch (Exception $e) {
+        return 'Tanggal tidak valid';
+    }
+
+    // Hitung perbedaan waktu
     $diff = $now->diff($ago);
 
-    $diff->w = floor($diff->d / 7);
-    $diff->d -= $diff->w * 7;
+    // Hitung minggu sebagai variabel lokal
+    $weeks = floor($diff->d / 7);
 
+    // Daftar satuan waktu
     $string = [
         'y' => 'tahun',
         'm' => 'bulan',
@@ -113,17 +121,28 @@ function time_elapsed_string($datetime, $full = false)
         'i' => 'menit',
         's' => 'detik',
     ];
+
+    // Konversi perbedaan waktu ke dalam string
     foreach ($string as $k => &$v) {
-        if ($diff->$k) {
+        if ($k === 'w') {
+            // Gunakan variabel lokal untuk minggu
+            if ($weeks > 0) {
+                $v = $weeks . ' ' . $v;
+            } else {
+                unset($string[$k]);
+            }
+        } elseif (isset($diff->$k) && $diff->$k) {
             $v = $diff->$k . ' ' . $v;
         } else {
             unset($string[$k]);
         }
     }
 
+    // Jika $full = false, ambil unit pertama saja
     if (!$full) {
         $string = array_slice($string, 0, 1);
     }
 
+    // Kembalikan hasil
     return $string ? implode(', ', $string) . ' yang lalu' : 'baru saja';
 }
