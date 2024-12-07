@@ -93,7 +93,7 @@ try {
                                                 <td><?= htmlspecialchars(format_datetime($activity['created_at'])) ?></td>
                                                 <td><?= htmlspecialchars($activity['username'] ?? 'Unknown User') ?></td>
                                                 <td><?= htmlspecialchars($activity['role'] ?? 'Unknown Role') ?></td>
-                                                <td><?= htmlspecialchars($activity['activity'] ?? 'No Activity') ?></td>
+                                                <td><?= htmlspecialchars($activity['action'] ?? 'No Activity') ?></td>
                                             </tr>
                                         <?php endforeach; ?>
                                     </tbody>
