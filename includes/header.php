@@ -4,6 +4,8 @@ if (session_status() !== PHP_SESSION_ACTIVE) {
     session_start();
 }
 
+define('BASE_URL', 'http://localhost/matematika_online/');
+
 ?>
 <!DOCTYPE html>
 <html lang="id">
@@ -30,23 +32,25 @@ if (session_status() !== PHP_SESSION_ACTIVE) {
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
         <div class="container">
-            <a class="navbar-brand" href="/matematika_online/">Matematika Online</a>
+            <a class="navbar-brand" href="<?= BASE_URL ?>">Matematika Online</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav me-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="siswa/dashboard.php">Beranda</a>
-                    </li>
+                    <?php if (isset($_SESSION['user_id'])): ?>
+                        <li class="nav-item">
+                            <a class="nav-link" href="<?= BASE_URL ?>siswa/dashboard.php">Beranda</a>
+                        </li>
+                    <?php endif; ?>
                 </ul>
                 <ul class="navbar-nav">
                     <?php if (isset($_SESSION['user_id'])): ?>
                         <li class="nav-item">
-                            <a class="nav-link" href="siswa/profile.php">Profile</a>
+                            <a class="nav-link" href="<?= BASE_URL ?>siswa/profile.php">Profile</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="/matematika_online/auth/logout.php">Logout</a>
+                            <a class="nav-link" href="<?= BASE_URL ?>auth/logout.php">Logout</a>
                         </li>
                     <?php else: ?>
                         <li class="nav-item">
