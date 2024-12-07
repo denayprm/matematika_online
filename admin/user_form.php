@@ -1,7 +1,7 @@
 <?php
 require_once '../config/init.php';
-require_once '../includes/auth_check.php';
-check_role('admin');
+require_once '../includes/auth_middleware.php';
+checkAdminAuth(); //
 
 $user_id = isset($_GET['id']) ? $_GET['id'] : null;
 $user = null;

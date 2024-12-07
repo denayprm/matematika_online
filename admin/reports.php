@@ -1,7 +1,7 @@
 <?php
 require_once '../config/init.php';
-require_once '../includes/auth_check.php';
-check_role('admin');
+require_once '../includes/auth_middleware.php';
+checkAdminAuth(); //
 
 // Get date range
 $start_date = isset($_GET['start_date']) ? $_GET['start_date'] : date('Y-m-d', strtotime('-30 days'));
@@ -9,7 +9,7 @@ $end_date = isset($_GET['end_date']) ? $_GET['end_date'] : date('Y-m-d');
 
 // Get user statistics
 $stmt = $conn->prepare("
-    SELECT 
+    SELECT
         COUNT(DISTINCT u.user_id) as total_users,
         COUNT(DISTINCT CASE WHEN u.role = 'siswa' THEN u.user_id END) as total_siswa,
         COUNT(DISTINCT CASE WHEN u.created_at >= ? THEN u.user_id END) as new_users
@@ -21,7 +21,7 @@ $user_stats = $stmt->fetch(PDO::FETCH_ASSOC);
 
 // Get learning statistics
 $stmt = $conn->prepare("
-    SELECT 
+    SELECT
         m.judul as materi_title,
         COUNT(DISTINCT ls.user_id) as total_students,
         AVG(ls.progress) as avg_progress,
