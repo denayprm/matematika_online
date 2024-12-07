@@ -23,13 +23,15 @@ $materi_list = $stmt->fetchAll(PDO::FETCH_ASSOC);
                 <div class="row">
                     <?php foreach ($materi_list as $materi): ?>
                         <div class="col-md-4 mb-4">
-                            <div class="card">
+                            <div class="materi-card">
                                 <div class="card-body">
                                     <h5 class="card-title"><?= htmlspecialchars($materi['judul']) ?></h5>
                                     <?php
                                     // Menampilkan gambar jika ada dalam konten
                                     if (preg_match('/<img.*?src=["\'](.*?)["\']/', $materi['konten'], $matches)) {
-                                        echo '<img src="' . htmlspecialchars($matches[1]) . '" class="card-img-top" alt="' . htmlspecialchars($materi['judul']) . '" style="max-width:100%; height:auto;">';
+                                        // Pastikan path gambar diupdate
+                                        $imagePath = '../' . htmlspecialchars($matches[1]);
+                                        echo '<img src="' . $imagePath . '" class="card-img-top" alt="' . htmlspecialchars($materi['judul']) . '" style="max-width:100%; height:auto;">';
                                     }
                                     ?>
                                     <p class="card-text"><?= htmlspecialchars($materi['deskripsi']) ?></p>
