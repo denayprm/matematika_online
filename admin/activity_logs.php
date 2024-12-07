@@ -4,9 +4,9 @@ require_once '../includes/auth_middleware.php';
 checkAdminAuth(); // Pastikan hanya admin yang bisa akses
 
 try {
-    // Mengambil aktivitas dari database
+    // Mengambil aktivitas dari database dengan kolom action dan full_name
     $stmt = $conn->query("
-        SELECT a.*, u.username
+        SELECT a.*, u.full_name
         FROM activity_logs a
         JOIN users u ON a.user_id = u.user_id
         ORDER BY a.created_at DESC
@@ -41,7 +41,6 @@ include '../includes/header.php';
                                         <tr>
                                             <th>Waktu</th>
                                             <th>Pengguna</th>
-                                            <th>Role</th>
                                             <th>Aktivitas</th>
                                         </tr>
                                     </thead>
@@ -49,9 +48,8 @@ include '../includes/header.php';
                                         <?php foreach ($activity_logs as $log): ?>
                                             <tr>
                                                 <td><?= htmlspecialchars(time_elapsed_string($log['created_at'])) ?></td>
-                                                <td><?= htmlspecialchars($activity['username'] ?? 'Unknown User') ?></td>
-                                                <td><?= htmlspecialchars($activity['role'] ?? 'Unknown Role') ?></td>
-                                                <td><?= htmlspecialchars($activity['activity'] ?? 'No Activity') ?></td>
+                                                <td><?= htmlspecialchars($log['full_name'] ?? 'Unknown User') ?></td>
+                                                <td><?= htmlspecialchars($log['action'] ?? 'No Activity') ?></td>
                                             </tr>
                                         <?php endforeach; ?>
                                     </tbody>
