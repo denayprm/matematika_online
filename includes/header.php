@@ -49,7 +49,7 @@ if (!defined('BASE_URL')) {
                     <?php if (isset($_SESSION['user_id'])): ?>
                         <?php if ($_SESSION['role'] === 'admin'): ?>
                             <li class="nav-item">
-                                <a class="nav-link" href="<?= BASE_URL ?>admin/dashboard.php">Dashboard Admin</a>
+                                <a class="nav-link" href="<?= BASE_URL ?>admin/profile_admin.php">Profile Admin</a>
                             </li>
                         <?php elseif ($_SESSION['role'] === 'siswa'): ?>
                             <li class="nav-item">
