@@ -18,15 +18,3 @@ body {
     transform: translateY(-5px);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
-
-.custom-img {
-    width: 300px;
-    height: 300px;
-    border-radius: 8px;
-    /* Opsional: tambahkan efek visual */
-}
-
-.card-img-top {
-    width: 20%;
-    height: 20%;
-}
