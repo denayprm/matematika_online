@@ -10,7 +10,7 @@ require_once 'includes/header.php';
 
 <div class="jumbotron text-center">
     <h1 class="display-4">Selamat Datang di Matematika Online</h1>
-    <p class="lead">Platform pembelajaran matematika interaktif untuk semua tingkatan</p>
+    <p class="lead">Platform pembelajaran matematika</p>
     <?php if (!isset($_SESSION['user_id'])): ?>
         <hr class="my-4">
         <p>Mulai belajar sekarang dengan mendaftar atau masuk ke akun Anda.</p>
@@ -25,6 +25,7 @@ require_once 'includes/header.php';
         <div class="card">
             <div class="card-body">
                 <h5 class="card-title">Materi Terstruktur</h5>
+                <a class="" href="auth/login.php" role="button">Login untuk akses lebih</a>
                 <p class="card-text">Pelajari matematika dengan materi yang disusun secara sistematis.</p>
             </div>
         </div>
@@ -32,8 +33,9 @@ require_once 'includes/header.php';
     <div class="col-md-6">
         <div class="card">
             <div class="card-body">
-                <h5 class="card-title">Latihan Interaktif</h5>
-                <p class="card-text">Uji pemahaman Anda dengan kuis dan latihan soal interaktif.</p>
+                <h5 class="card-title">Sistem Guest</h5>
+                <a class="" href="guest/materi.php" role="button">Lihat Materi Guest</a>
+                <p class="card-text">Pelajari matematika secara gratis tanpa perlu mendaftar.</p>
             </div>
         </div>
     </div>
