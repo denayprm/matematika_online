@@ -44,7 +44,7 @@ $materi = [
         <?php foreach ($materi as $item): ?>
             <div class="materi-card">
                 <h2><?php echo $item[0]; ?></h2>
-                <div class="card-text">
+                <div class="card-text" align="justify">
                     <p><?php echo $item[1]; ?></p>
                 </div>
             </div>
