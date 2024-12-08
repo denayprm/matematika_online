@@ -1,0 +1,95 @@
+-- Membuat database
+CREATE DATABASE IF NOT EXISTS `matematika_online` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
+USE `matematika_online`;
+
+-- --------------------------------------------------------
+
+-- Membuat tabel `users`
+DROP TABLE IF EXISTS `users`;
+CREATE TABLE IF NOT EXISTS `users` (
+  `user_id` int(11) NOT NULL AUTO_INCREMENT,
+  `last_login` datetime DEFAULT NULL,
+  `username` varchar(50) NOT NULL,
+  `password` varchar(255) NOT NULL,
+  `email` varchar(100) NOT NULL,
+  `full_name` varchar(100) NOT NULL,
+  `role` enum('admin','siswa') NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
+  `profile_picture` varchar(255) DEFAULT NULL,
+  `description` text DEFAULT NULL,
+  PRIMARY KEY (`user_id`),
+  UNIQUE KEY `username` (`username`),
+  UNIQUE KEY `email` (`email`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+-- Menambahkan data ke tabel `users`
+INSERT INTO `users` (`user_id`, `last_login`, `username`, `password`, `email`, `full_name`, `role`, `created_at`, `profile_picture`, `description`) VALUES
+(1, '2024-12-08 13:30:54', 'maesaroh', '$2y$10$ETlyyd09X6wBzZCVfSyIWu1E10K4mFeW4p5O0wXiYiv2RgPYWPoi.', 'adminmaesaroh@gmail.com', 'Siti Maesaroh', 'admin', '2024-12-07 09:30:57', '<img src="assets/img/adminsaroh.jpg" alt="Siti Maesaroh" style="width:200px; height:auto; max-width:50%;">', 'Apa yang terjadi itu yang terbaik.'),
+(3, '2024-12-08 13:45:11', 'denay', '$2y$10$zW/nYR9ePBu.14eifRxs.eS/gQlYDqKSDCvN4hL7y8TxDg9RILHDW', 'denay@gmail.com', 'Naya Putra', 'siswa', '2024-12-05 19:00:53', '<img src="assets/img/denay.jpg" alt="Naya Putra" style="width:600px; height:auto; max-width:50%;">', 'Saya ada seorang yang gemar sekali bermain game online.');
+
+-- --------------------------------------------------------
+
+-- Membuat tabel `activity_logs`
+DROP TABLE IF EXISTS `activity_logs`;
+CREATE TABLE IF NOT EXISTS `activity_logs` (
+  `log_id` int(11) NOT NULL AUTO_INCREMENT,
+  `user_id` int(11) NOT NULL,
+  `created_at` datetime DEFAULT current_timestamp(),
+  `action` varchar(255) NOT NULL,
+  PRIMARY KEY (`log_id`),
+  KEY `user_id` (`user_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- Menambahkan foreign key untuk `activity_logs`
+ALTER TABLE `activity_logs`
+  ADD CONSTRAINT `activity_logs_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`user_id`);
+
+-- --------------------------------------------------------
+
+-- Menambahkan data ke tabel `activity_logs`
+TRUNCATE TABLE `activity_logs`;
+INSERT INTO `activity_logs` (`log_id`, `user_id`, `created_at`, `action`) VALUES
+(1, 1, '2024-12-08 13:30:54', 'Login as admin'),
+(2, 3, '2024-12-08 13:45:11', 'Login as siswa');
+
+-- --------------------------------------------------------
+
+-- Membuat tabel `materi`
+DROP TABLE IF EXISTS `materi`;
+CREATE TABLE IF NOT EXISTS `materi` (
+  `materi_id` int(11) NOT NULL AUTO_INCREMENT,
+  `judul` varchar(200) NOT NULL,
+  `konten` text NOT NULL,
+  `keterangan` text DEFAULT NULL,
+  `created_by` int(11) DEFAULT NULL,
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
+  `deskripsi` text DEFAULT NULL,
+  `status` enum('draft','published') DEFAULT 'draft',
+  `is_active` tinyint(1) DEFAULT 1,
+  `jumlah_dibaca` int(11) DEFAULT 0,
+  PRIMARY KEY (`materi_id`),
+  KEY `created_by` (`created_by`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- Menambahkan foreign key untuk `materi`
+ALTER TABLE `materi`
+  ADD CONSTRAINT `materi_ibfk_1` FOREIGN KEY (`created_by`) REFERENCES `users` (`user_id`);
+
+-- --------------------------------------------------------
+
+-- Menambahkan data ke tabel `materi`
+TRUNCATE TABLE `materi`;
+INSERT INTO `materi` (`materi_id`, `judul`, `konten`, `keterangan`, `created_by`, `created_at`, `deskripsi`, `status`, `is_active`, `jumlah_dibaca`) VALUES
+(1, 'Pengenalan Aljabar', '<img src="assets/img/MateriAljabar.jpg" alt="Pengenalan Aljabar" style="max-width:100%; height:auto;">', 'Aljabar adalah cabang matematika yang mempelajari simbol-simbol...', 1, '2024-12-07 17:00:00', 'Memahami dasar-dasar aljabar...', 'published', 1, 3),
+(2, 'Geometri Dasar', '<img src="assets/img/MateriGeometri.jpg" alt="Geometri Dasar" style="max-width:100%; height:auto;">', 'Geometri adalah cabang matematika...', 1, '2024-12-07 17:00:00', 'Memahami konsep-konsep dasar...', 'published', 1, 4),
+(3, 'Statistika Dasar', '<img src="assets/img/MateriStatistika.jpg" alt="Statistika Dasar" style="max-width:100%; height:auto;">', 'Statistika adalah ilmu yang mempelajari...', 1, '2024-12-07 17:00:00', 'Memahami konsep dasar statistika...', 'published', 1, 0),
+(4, 'Persamaan Linier', '<img src="assets/img/MateriLinear.jpg" alt="Persamaan Linier" style="max-width:100%; height:auto;">', 'Persamaan linear adalah persamaan yang merepresentasikan...', 1, '2024-12-07 17:00:00', 'Memahami konsep dan cara menyelesaikan persamaan linier.', 'published', 1, 1),
+(5, 'Fungsi Kuadrat', '<img src="assets/img/MateriKuadrat.jpg" alt="Fungsi Kuadrat" style="max-width:100%; height:auto;">', 'Fungsi kuadrat adalah fungsi matematika yang dinyatakan dalam bentuk...', 1, '2024-12-07 17:00:00', 'Memahami grafik dan sifat-sifat fungsi kuadrat.', 'published', 1, 0),
+(6, 'Trigonometri Dasar', '<img src="assets/img/MateriTrigonometri.jpg" alt="Trigonometri Dasar" style="max-width:100%; height:auto;">', 'Trigonometri adalah cabang matematika yang mempelajari hubungan antara...', 1, '2024-12-07 17:00:00', 'Memahami konsep dasar trigonometri.', 'published', 1, 0);
+
+-- --------------------------------------------------------
+
+-- Menyelesaikan transaksi
+COMMIT;
