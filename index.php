@@ -9,6 +9,7 @@ require_once 'includes/header.php';
 ?>
 
 <div class="jumbotron text-center">
+    <img src="assets/img/math_online.png" alt="Matematika Online Siti Maesaroh" class="img-fluid mb-4" style="max-height: 200px;">
     <h1 class="display-4">Selamat Datang di Matematika Online</h1>
     <p class="lead">Platform pembelajaran matematika</p>
     <?php if (!isset($_SESSION['user_id'])): ?>
@@ -19,7 +20,7 @@ require_once 'includes/header.php';
         <p>Akses akun anda untuk melihat lebih detail tentang fitur</p>
         <div class="row mt-4">
             <div class="col-md-6">
-                <div class="card">
+                <div class="card materi-card">
                     <div class="card-body">
                         <h5 class="card-title">Materi Terstruktur</h5>
                         <a class="" href="auth/login.php" role="button">Login untuk akses lebih</a>
@@ -28,7 +29,7 @@ require_once 'includes/header.php';
                 </div>
             </div>
             <div class="col-md-6">
-                <div class="card">
+                <div class="card materi-card">
                     <div class="card-body">
                         <h5 class="card-title">Sistem Guest</h5>
                         <a class="" href="guest/materi.php" role="button">Lihat Materi Guest</a>
@@ -39,7 +40,8 @@ require_once 'includes/header.php';
         </div>
     <?php endif; ?>
 </div>
-<div>
+
+<div class="container">
     <div class="col">
         <div class="card">
             <div class="card-body">
@@ -48,7 +50,6 @@ require_once 'includes/header.php';
             </div>
         </div>
     </div>
-
 </div>
 
 <?php
