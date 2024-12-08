@@ -19,7 +19,7 @@ $materi_list = $stmt->fetchAll(PDO::FETCH_ASSOC);
         <div class="card">
             <div class="card-body">
                 <h5>Selamat datang, <?php echo htmlspecialchars($_SESSION['username']); ?></h5>
-                <h6>Daftar Bacaan</h6>
+                <h3 align="center">Daftar Bacaan</h3>
                 <div class="row">
                     <?php foreach ($materi_list as $materi): ?>
                         <div class="col-md-4 mb-4">
