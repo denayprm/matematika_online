@@ -7,6 +7,12 @@ document.addEventListener('DOMContentLoaded', function () {
 
 function confirmLogout() {
     if (confirm("Apakah Anda yakin ingin keluar?")) {
-        window.location.href = "<?= BASE_URL ?>auth/logout.php";
+        const logoutUrl = "<?= BASE_URL ?>auth/logout.php";
+        // Validasi URL
+        if (logoutUrl.startsWith("http://localhost/matematika_online/")) {
+            window.location.href = logoutUrl;
+        } else {
+            console.error("URL tidak valid.");
+        }
     }
 }

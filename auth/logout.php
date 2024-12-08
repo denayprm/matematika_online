@@ -4,6 +4,7 @@ require_once '../config/database.php';
 
 if (session_status() !== PHP_SESSION_ACTIVE) {
     session_start();
+    $_SESSION['csrf_token'] = bin2hex(random_bytes(32));
 }
 
 if (!defined('BASE_URL')) {

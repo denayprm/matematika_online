@@ -1,4 +1,9 @@
 <?php
+if (session_status() !== PHP_SESSION_ACTIVE) {
+    session_start();
+    $_SESSION['csrf_token'] = bin2hex(random_bytes(32));
+}
+
 require_once '../config/init.php';
 require_once '../config/database.php';
 
