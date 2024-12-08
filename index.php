@@ -43,7 +43,8 @@ require_once 'includes/header.php';
     <div class="col">
         <div class="card">
             <div class="card-body">
-                <p>Platform Matematika Online adalah platform pembelajaran matematika yang menyediakan materi pembelajaran matematika secara gratis.</p>
+                <p align="justify">Platform Matematika Online adalah platform pembelajaran matematika yang menyediakan materi pembelajaran matematika secara gratis. Dengan tujuan untuk meningkatkan pemahaman dan keterampilan siswa dalam matematika, platform ini menawarkan berbagai jenis materi yang mencakup berbagai topik, mulai dari aljabar, geometri, hingga statistika.</p>
+                <p align="justify">Melalui Platform Matematika Online, diharapkan dapat membantu siswa mengembangkan minat dan kecintaan terhadap matematika, serta mempersiapkan mereka untuk menghadapi tantangan akademis di masa depan. Dengan demikian, platform ini tidak hanya berfungsi sebagai sumber belajar, tetapi juga sebagai komunitas pendukung bagi para pembelajar matematika.</p>
             </div>
         </div>
     </div>
