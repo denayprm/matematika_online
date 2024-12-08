@@ -1,4 +1,12 @@
 <?php
+if (session_status() !== PHP_SESSION_ACTIVE) {
+    session_start();
+}
+
+require_once 'header.php';
+?>
+
+<?php
 // Data materi
 $materi = [
     [
@@ -24,67 +32,20 @@ $materi = [
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Materi Pembelajaran</title>
     <link rel="stylesheet" href="assets/css/styles.css">
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            margin: 0;
-            padding: 20px;
-        }
-
-        h1 {
-            text-align: center;
-            color: #333;
-        }
-
-        .container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 20px;
-        }
-
-        .materi {
-            background: #fff;
-            border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            overflow: hidden;
-            width: 300px;
-        }
-
-        .materi img {
-            width: 100%;
-            height: auto;
-        }
-
-        .content {
-            padding: 15px;
-        }
-
-        .content h2 {
-            font-size: 1.5em;
-            margin: 0;
-            color: #333;
-        }
-
-        .content p {
-            color: #555;
-        }
-
-        .content strong {
-            color: #000;
-        }
-    </style>
+    <!-- CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link href="/matematika_online/assets/css/style.css" rel="stylesheet">
 </head>
 
 <body>
-    <h1>Materi Pembelajaran</h1>
+    <h1 align="center">Materi Pembelajaran</h1>
     <div class="container">
         <?php foreach ($materi as $item): ?>
-            <div class="materi">
-                <div class="content">
-                    <h2><?php echo $item[1]; ?></h2>
-                    <p><?php echo $item[2]; ?></p>
+            <div class="materi-card">
+                <h2><?php echo $item[0]; ?></h2>
+                <div class="card-text">
+                    <p><?php echo $item[1]; ?></p>
                 </div>
             </div>
         <?php endforeach; ?>
@@ -92,3 +53,7 @@ $materi = [
 </body>
 
 </html>
+
+<?php
+require_once 'footer.php';
+?>
