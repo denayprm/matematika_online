@@ -21,14 +21,15 @@ include '../includes/header.php';
 
 <div class="row">
     <div class="col-md-6 offset-md-3">
-        <h1>Profil Pengguna</h1>
+        <h1 align="center">Profil Pengguna</h1>
         <div class="card">
             <div class="card-body text-center">
-                <?php if ($user['profile_picture']): ?>
-                    <img src="<?= htmlspecialchars($user['profile_picture']) ?>" alt="Foto Profil" class="img-fluid rounded-circle" style="width: 150px; height: 150px;">
-                <?php else: ?>
-                    <img src="assets/img/default-profile.png" alt="Foto Profil" class="img-fluid rounded-circle" style="width: 150px; height: 150px;">
-                <?php endif; ?>
+                <?php
+                if (preg_match('/<img.*?src=["\'](.*?)["\']/', $user['profile_picture'], $matches)) {
+                    // Pastikan path gambar diupdate
+                    $imagePath = '../' . htmlspecialchars($matches[1]);
+                    echo '<img src="' . $imagePath . '" class="card-img-top" alt="' . htmlspecialchars($user['profile_picture']) . '" style="width: 150px; height: auto;">';
+                } ?>
                 <h3 class="mt-3"><?= htmlspecialchars($user['full_name']) ?></h3>
                 <p><strong>Email:</strong> <?= htmlspecialchars($user['email']) ?></p>
                 <p><strong>Role:</strong> <?= htmlspecialchars($user['role']) ?></p>
