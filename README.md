@@ -7,8 +7,7 @@ Proyek ini bertujuan untuk menyediakan platform pembelajaran matematika secara o
 ## Fitur Utama
 
 - **Materi Pembelajaran**: Berbagai topik matematika yang terstruktur.
-- **Profil Pengguna**: Pengguna dapat mengelola profil mereka, termasuk foto dan deskripsi.
-- **Interaksi Pengguna**: Fitur untuk berdiskusi dan bertanya tentang materi.
+- **Profil Pengguna**: Profil awal pengguna
 
 ## Cara Menggunakan
 
